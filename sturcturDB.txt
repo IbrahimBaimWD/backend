@@ -1,0 +1,22 @@
+
+
+//Online Grocery Web App
+npx sequelize-cli model:generate --name Product --attributes name:string,desc:string,price:integer,weight:integer,user_id:string,category_id:integer
+npx sequelize-cli model:generate --name Product_Image --attributes product_id:integer,image:string
+npx sequelize-cli model:generate --name Product_Category --attributes category:string
+npx sequelize-cli model:generate --name Product_Stock --attributes stock:integer,product_id:integer
+npx sequelize-cli model:generate --name Cart --attributes user_id:string 
+npx sequelize-cli model:generate --name Product_Cart --attributes quantity:integer,price:integer,status:boolean,product_id:integer,cart_id:integer
+npx sequelize-cli model:generate --name Transaction --attributes invoice:string,delivery_fee:integer,total_price:integer,status:string,image_payment:string
+npx sequelize-cli model:generate --name Product_Discount --attributes name:string,persentage:integer,nominal:integer,discount_price:integer,status:boolean,start_discount:date,end_discount:date
+npx sequelize-cli model:generate --name Branch --attributes name:string,user_id:uuid
+
+npx sequelize-cli model:generate --name Product_Warehouses --attributes stocks:integer
+npx sequelize-cli model:generate --name Warehouse --attributes warehouse_name:string,province:string,city:string,postal_code:string
+npx sequelize-cli model:generate --name Order_Status --attributes status:string
+npx sequelize-cli model:generate --name Transaction_Product_Warehouses --attributes quantity:integer,price:integer
+npx sequelize-cli model:generate --name Journal --attributes stock_before:integer,stock_after:integer,desc:string
+npx sequelize-cli model:generate --name Journal_Type --attributes type:string,append:boolean
+
+
+
